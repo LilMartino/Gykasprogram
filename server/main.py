@@ -5,7 +5,15 @@ def create_event(sport, capacity):
 
 
 sport = input("Jaký sport? ")
-capacity = int(input("Kolik míst? "))
+
+while True:
+    try:
+        capacity = int(input("Kolik míst? "))
+        if capacity > 0:
+            break
+        print("Počet míst musí být větší než nula.")
+    except ValueError:
+        print("Zadej celé číslo, například 4.")
 
 event = create_event(sport, capacity)
 print("Vytvořená událost:", event)
