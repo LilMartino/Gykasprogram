@@ -4,7 +4,11 @@ def create_event(sport, capacity):
     return {"sport": sport, "capacity": capacity}
 
 
-sport = input("Jaký sport? ")
+while True:
+    sport = input("Jaký sport? ").strip()
+    if sport:
+        break
+    print("Zadej název sportu.")
 
 while True:
     try:
